@@ -1,2 +1,2 @@
 # redis_division-restando
- Ejercicio de Docker con Redis y Python: divide enteros usando restas. Se alimenta una lista de mensajes con tuplas de enteros (serializando y deserializando), para generar instancias que calculan la división (usando restas en una iteración).
+ Ejercicio de Docker con Redis y Python: divide enteros usando restas. Se alimenta una lista de mensajes con tuplas de enteros (serializando y deserializando), para generar instancias que calculan la división (usando restas en una iteración). Por ejemplo, la operacion: 328 / 97 resulta en un cociente 3 y residuo 37, que equivale a 328-97-97-97 = 37
