@@ -1,0 +1,61 @@
+version: '3'
+services:
+  redis:
+    image: "redis:alpine"
+    ports:
+      - "6379:6379"
+
+  add-enteros_a:
+    build: './agregar_enteros'
+    depends_on:
+      - redis
+    volumes:
+      - ./agregar_enteros:/code
+    command: python push_enteros.py
+    environment:
+      PYTHONUNBUFFERED: 1
+      REDIS_HOST: redis
+
+  add-enteros_b:
+    build: './agregar_enteros'
+    depends_on:
+      - redis
+    volumes:
+      - ./agregar_enteros:/code
+    command: python push_enteros.py
+    environment:
+      PYTHONUNBUFFERED: 1
+      REDIS_HOST: redis
+      
+  calc-resta_a:
+    build: './calcular_resta'
+    depends_on:
+      - redis
+    volumes:
+      - ./calcular_resta:/code
+    command: python pop_restar.py
+    environment:
+      PYTHONUNBUFFERED: 1
+      REDIS_HOST: redis
+
+  calc-resta_b:
+    build: './calcular_resta'
+    depends_on:
+      - redis
+    volumes:
+      - ./calcular_resta:/code
+    command: python pop_restar.py
+    environment:
+      PYTHONUNBUFFERED: 1
+      REDIS_HOST: redis      
+
+  calc-resta_c:
+    build: './calcular_resta'
+    depends_on:
+      - redis
+    volumes:
+      - ./calcular_resta:/code
+    command: python pop_restar.py
+    environment:
+      PYTHONUNBUFFERED: 1
+      REDIS_HOST: redis      
