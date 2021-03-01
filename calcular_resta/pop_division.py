@@ -29,11 +29,11 @@ class Division:
             self.operacion += '-' + str(divisor)
 
         self.residuo = dividendo
+        self.operacion += ' = ' + str(dividendo)
 
         if (self.cociente != 0): 
             self.cociente *= self.get_signo()
             self.residuo *= self.get_signo()
-            self.operacion += ' = ' + str(dividendo)
 
 
     def display(self):

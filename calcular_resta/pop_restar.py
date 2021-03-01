@@ -42,4 +42,4 @@ while True:
     objeto.calcular()
     objeto.display()    
 
-    time.sleep(2)
+    time.sleep(1.25)
