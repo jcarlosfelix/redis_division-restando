@@ -2,16 +2,10 @@ from pop_metodos import get_absoluto, compara_signos
 
 
 class Division:
-    dividendo = 0
-    divisor = 0
-    cociente = 0
-    residuo = 0
-    operacion = ''
-    signo = 0
-
 
     def __init__(self, tupla):
         self.dividendo, self.divisor, self.cociente, self.residuo, self.operacion = tupla
+        self.signo = 0
 
     def get_signo(self):
         if (self.signo == 0): self.signo = compara_signos(self.dividendo, self.divisor)
